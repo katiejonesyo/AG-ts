@@ -1,7 +1,25 @@
-import { it } from './utils';// import functions and grab DOM elements
+import { Classes } from './types'
+import { setUser } from './local-storage-utils';
+const form = document.querySelector('form');
 
-// initialize state
-const ok = it('fito');
-console.log(ok)
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
 
-// set event listeners to update state and DOM 
+    const data = new FormData(form);
+
+    const name = String(data.get('name'));
+    const userClass = data.get('class') as Classes;
+
+    const user = {
+        hp: 35,
+        gold: 0,
+        name: name,
+        class: userClass,
+        completed: {}
+    };
+
+    setUser(user);
+
+    window.location.href = './map';
+});
+
