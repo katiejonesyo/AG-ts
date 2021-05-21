@@ -1,4 +1,3 @@
-
 export type Classes = 'wizard' | 'elf' | 'druid' | 'rogue' | ''
 
 export interface QuestsCompleted { 

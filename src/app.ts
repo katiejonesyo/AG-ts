@@ -1,4 +1,3 @@
-
 import { Classes } from './types'
 import { setUser } from './local-storage-utils';
 const form = document.querySelector('form');
